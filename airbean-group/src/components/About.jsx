@@ -9,7 +9,8 @@ function About(){
             {/*Header*/}
             <header className="about-header">
                 <img src={headerImg} alt="Bilder på blad" />
-                <img src={menuImg} alt="Hamburgarmeny" />    
+                <img src={menuImg} alt="Hamburgarmeny" className="menu-icon" />
+                 
             </header>
             {/*Innehåll*/}
             <section className="about-content">
