@@ -1,0 +1,56 @@
+.about-container{
+    background-color: #F3E4E1;
+    color: #3d2c2c;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 2rem;
+}
+.about-header{
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+.header-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.menu-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    cursor: pointer;
+}
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.bold {
+    font-weight: bold;
+}
+.about-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+h3{
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+.about-footer{
+    width: 100%;
+    height: 120px;
+}
+.footer-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

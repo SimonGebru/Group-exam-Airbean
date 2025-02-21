@@ -5,11 +5,10 @@ import Menu from "./components/Menu";
 import Cart from "./components/Cart";
 import Status from "./components/Status";
 import About from "./components/About";
-import Nav from "./components/Nav";
 
 function App() {
   return (
-    <Router>
+  <Router>
       <Nav />
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -22,5 +21,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
