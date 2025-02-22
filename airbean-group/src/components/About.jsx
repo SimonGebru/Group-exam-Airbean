@@ -22,7 +22,7 @@ function About(){
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima incidunt ratione iure rem aperiam omnis eaque quasi, natus saepe maiores quis dolorem repellendus nam commodi autem, error aliquam illo at!
                 </p>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero aut illo quo dicta impedit, incidunt nam eos alias quam omnis itaque, distinctio optio harum ratione nulla nemo sequi voluptatibus ea!
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero aut illo quo dicta impedit, incidunt nam eos alias quam omnis itaque, distinctio optio harum ratione nulla nemo sequi voluptatibus ea! <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod animi nemo quisquam a voluptatem perspiciatis dolorem dolore consequuntur totam aspernatur magnam voluptas culpa, corrupti impedit et amet! Tempora, aperiam labore?
                 </p>
             </section>
             {/*Profil*/}
