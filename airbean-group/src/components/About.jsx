@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./About.scss"; 
 import headerImg from "../assets/header.png"
 import footerImg from "../assets/footer.png"
@@ -7,8 +8,13 @@ import { useNavigate } from "react-router-dom";
 
 function About(){
     const navigate = useNavigate();
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
     return (
-        <div className="about-container">
+        <div className={`about-container ${isVisible ? "fade-in" : ""}`}>
             {/*Header*/}
             <header className="about-header">
                 <img src={headerImg} alt="Bilder på blad" />
