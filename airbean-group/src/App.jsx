@@ -3,8 +3,9 @@ import Nav from "./components/Nav";
 import Landing from "./components/Landing";
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
-import Status from "./components/Status";*/
-import About from "./components/About";
+import Status from "./components/Status";
+import About from "./components/About"; */
+import Nav from "./components/Nav";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
 
     <div>
       <h1></h1>
-      <About />
+      <Nav />
     </div>
   );
 }

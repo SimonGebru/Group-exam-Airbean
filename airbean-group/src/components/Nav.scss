@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+$bg-color: #2F2926;
+$text-color: white;
+$line-width: 30px; 
+
+// 🛠 Mixins
+@mixin center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    font-family: 'PT Serif', serif;
+}
+.close-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 1100;
+    
+}
+// 📌 Navigationens huvudcontainer (Centrering fixad!)
+.nav-container {
+    background-color: $bg-color;
+    color: $text-color;
+    width: 375px;
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); // Perfekt centrering
+    z-index: 1000;
+    
+
+    
+    
+
+    // 📄 Menylänkar (Korrekt centrerade)
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Säkerställer att texten centreras horisontellt
+     
+
+        p {
+            cursor: pointer;
+            position: relative;
+            font-family: 'PT Serif', serif !important;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 35.4px;
+            text-align: center;
+
+            &::after {
+                content: "";
+                display: block;
+                width: $line-width;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.5);;
+                margin: 10px auto 0;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
