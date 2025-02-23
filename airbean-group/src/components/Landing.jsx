@@ -1,7 +1,7 @@
 function Landing() {
 
     return (
-        <h1>Cart sida</h1>
+        <h1>Landing</h1>
     )
 };
 

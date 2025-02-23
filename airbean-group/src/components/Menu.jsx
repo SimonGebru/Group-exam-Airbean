@@ -1,7 +1,7 @@
 function Menu() {
 
     return (
-        <h1>Cart sida</h1>
+        <h1>menu</h1>
     )
 };
 

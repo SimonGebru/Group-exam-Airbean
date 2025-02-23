@@ -1,7 +1,8 @@
 function Status() {
+import Status from './Status';
 
     return (
-        <h1>Cart sida</h1>
+        <h1>Status</h1>
     )
 };
 
