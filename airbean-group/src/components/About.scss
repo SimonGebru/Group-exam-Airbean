@@ -20,7 +20,7 @@ $header-font: 'PT Serif', serif;
     justify-content: flex-start;
 }
 .about-content {
-    max-width: 320px; /* Justera så att texten alltid håller sig inom samma linje */
+    max-width: 320px; 
     margin: 0 auto;
     text-align: left;
 }
@@ -52,7 +52,7 @@ $header-font: 'PT Serif', serif;
 h1 {
     font-size: 42px;
     margin-bottom: 1rem;
-    margin-top: 0; /* Ta bort onödigt avstånd uppåt */
+    margin-top: 0; 
     padding: 0 20px;
     text-align: left;
     padding-left: 20px;
@@ -74,18 +74,16 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
 
     .profile-img {
         width: 80px;
         height: 80px;
         border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 0.5rem;
     }
 
-    h3 {
-        margin: 0.5rem 0;
-        font-size: 1.2rem;
-    }
 }
 
 .about-footer {
@@ -103,7 +101,7 @@ h1 {
 
 p {
     padding: 0 20px;
-    margin-bottom: 1rem; /* Skapar mer luft mellan stycken */
+    margin-bottom: 1rem; 
     font-family: $primary-font;
     font-weight: 400;
     font-size: 12px;
