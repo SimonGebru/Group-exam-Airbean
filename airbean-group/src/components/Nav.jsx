@@ -3,7 +3,7 @@ import "./Nav.scss";
 import closeIcon from "../assets/close.png";
 
 function Nav() {
-    /*const navigate = useNavigate();*/
+    const navigate = useNavigate();
 
     return (
         <>

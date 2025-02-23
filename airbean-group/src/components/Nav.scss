@@ -4,7 +4,7 @@ $bg-color: #2F2926;
 $text-color: white;
 $line-width: 30px; 
 
-// 🛠 Mixins
+
 @mixin center-flex {
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@ body{
     z-index: 1100;
     
 }
-// 📌 Navigationens huvudcontainer (Centrering fixad!)
+
 .nav-container {
     background-color: $bg-color;
     color: $text-color;
@@ -36,18 +36,18 @@ body{
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); // Perfekt centrering
+    transform: translate(-50%, -50%); 
     z-index: 1000;
     
 
     
     
 
-    // 📄 Menylänkar (Korrekt centrerade)
+    
     .nav-links {
         display: flex;
         flex-direction: column;
-        align-items: center; // Säkerställer att texten centreras horisontellt
+        align-items: center; 
      
 
         p {

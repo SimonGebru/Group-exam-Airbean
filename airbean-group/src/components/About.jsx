@@ -6,13 +6,13 @@ import ownerImg from "../assets/owner.png"
 import { useNavigate } from "react-router-dom";
 
 function About(){
-    /*const navigate = useNavigate();*/
+    const navigate = useNavigate();
     return (
         <div className="about-container">
             {/*Header*/}
             <header className="about-header">
                 <img src={headerImg} alt="Bilder på blad" />
-                <img src={menuImg} alt="Hamburgarmeny" className="menu-icon" /*onClick={() => navigate("/nav")}*//>
+                <img src={menuImg} alt="Hamburgarmeny" className="menu-icon" onClick={() => navigate("/nav")}/>
                  
             </header>
             {/*Innehåll*/}
