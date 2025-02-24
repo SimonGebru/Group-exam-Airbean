@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./About.scss"; 
-import headerImg from "../assets/header.png"
-import footerImg from "../assets/footer.png"
+import headerImg from "../assets/header2.png"
+import footerImg from "../assets/header3.png"
 import menuImg from "../assets/menu.png"
 import ownerImg from "../assets/owner.png"
 import { useNavigate } from "react-router-dom";

@@ -19,13 +19,6 @@ function App() {
         <Route path="/nav" element={<Nav />} />
       </Routes>
     </Router>
-  
-
-
-   /* <div>
-      <h1></h1>
-      <Nav />
-    </div>*/
   );
 }
 
