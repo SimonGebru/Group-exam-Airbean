@@ -1,0 +1,121 @@
+.menu-container {
+  position: relative;
+  background-color: #f9ebe6;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+.menu-container .header {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+.menu-container .footer {
+  position: relative;
+  width: 100%;
+  bottom: -5px;
+  margin-top: 80px;
+  z-index: 1;
+}
+.menu-container .menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.menu-container .ham-menu, .menu-container .cart-icon {
+  cursor: pointer;
+  z-index: 1;
+}
+.menu-container .ham-menu {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.menu-container .cart-icon {
+  position: relative;
+}
+.menu-container .cart-icon-container {
+  display: flex;
+  border-radius: 50%;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  position: relative;
+  top: 12px;
+  right: 20px;
+}
+.menu-container .cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: bold;
+}
+.menu-container .menu-title {
+  font-family: "PT Serif", serif;
+  text-align: center;
+  font-size: 42px;
+  margin-top: 100px;
+  position: relative;
+  z-index: 2;
+}
+.menu-container .menu-list {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+.menu-container .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "PT Serif", serif;
+  background: #f9ebe6;
+  padding: 15px;
+  margin-bottom: 5px;
+}
+.menu-container .add-button {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+.menu-container .menu-item-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 15px;
+  line-height: 0.2;
+  padding-top: 10px;
+}
+.menu-container .menu-item-name {
+  font-weight: bold;
+  font-size: 23px;
+}
+.menu-container .menu-item-price {
+  font-size: 23px;
+  font-weight: bold;
+  text-align: right;
+  min-width: 50px;
+}
+.menu-container .menu-item-description {
+  font-size: 12px;
+  font-family: "PT Serif", serif;
+  color: gray;
+}/*# sourceMappingURL=Menu.css.map */
