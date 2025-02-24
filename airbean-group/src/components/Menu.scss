@@ -1,4 +1,4 @@
-$primary-color: #f9ebe6;
+$primary-color: #f3e4e1;
 $main-font: 'PT Serif', serif;
 $secondary-font: 'PT Sans', sans-serif;
 $main-font-color: black;
@@ -9,9 +9,10 @@ $description-font-color: gray;
   position: relative;
   background-color: $primary-color;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 390px;
+  max-height: 844px;
   margin: auto;
-  overflow: hidden;
+  overflow: scroll;
 
   .header {
     position: absolute;
@@ -145,4 +146,5 @@ $description-font-color: gray;
     font-family: $main-font;
     color: $description-font-color;
   }
+
 }
