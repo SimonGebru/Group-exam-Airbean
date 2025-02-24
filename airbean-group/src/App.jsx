@@ -10,11 +10,10 @@ import About from "./components/About";
 
 =======
 import About from "./components/About";
->>>>>>> f80831f62f6e5dd2ed4d03a410f2c6868efaee47
 
 function App() {
   return (
-  <Router>
+    <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/menu" element={<Menu />} />
