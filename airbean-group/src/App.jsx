@@ -9,7 +9,6 @@ import About from "./components/About";
 function App() {
   return (
     <Router>
-      <Nav />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/menu" element={<Menu />} />
