@@ -4,12 +4,8 @@ import Nav from "./components/Nav";
 import Landing from "./components/Landing";
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
-<<<<<<< HEAD
-import Status from "./components/Status";
 import About from "./components/About"; 
 
-=======
-import About from "./components/About";
 
 function App() {
   return (

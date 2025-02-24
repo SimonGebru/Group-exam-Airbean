@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 import React from 'react'
 import drone from '/src/assets/drone.png'
 import { useNavigate } from "react-router-dom";
@@ -30,4 +27,3 @@ const Status = () => {
 }
 
 export default Status
->>>>>>> f80831f62f6e5dd2ed4d03a410f2c6868efaee47

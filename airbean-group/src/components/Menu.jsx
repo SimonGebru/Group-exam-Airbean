@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 import React, { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa";
 import HeaderLogo from "../assets/header2.png";
@@ -73,4 +70,3 @@ const Menu = () => {
 };
 
 export default Menu;
->>>>>>> menu
