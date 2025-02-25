@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Status = () => {
+  const [orderNumber, setOrderNumber] = useState('');
+  const [timeLeft, setTimeLeft] = useState();
   
   /* Button till nav */
   const navigate = useNavigate();
