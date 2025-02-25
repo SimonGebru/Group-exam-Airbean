@@ -3,6 +3,8 @@ import bagIcon from '../assets/bag 2.png'
 import React, { useState } from "react";
 import { useEffect } from "react";
 
+import ApiCall from './Api.jsx';
+
 
 
 
@@ -21,6 +23,7 @@ const Cart = () => {
         {id: 1, title: "Bryggkaffe", price: 49},
         {id: 2, title: "Caffé Doppio", price: 49},
     ]);
+
 
     useEffect(() => {
         priceCalculation();
@@ -80,7 +83,6 @@ const Cart = () => {
 
     return (
        <>
-       <section className="background-filler">
        <section className='temp-background'>
 
         <div className={`dark-background-overlay ${isHidden ? "hidden" : ""}`}></div>
@@ -126,7 +128,7 @@ const Cart = () => {
 
             <section className='bottom-text-container'>
                 <p className='cart-total-text'>Total </p>
-                <p className='cart-dots-divider'> ............................. </p>
+                <p className='cart-dots-divider'> ... </p>
                 <p className='cart-price'>{totalPrice}</p>
                 <p className='cart-information'>inkl moms + drönarleverans</p>
 
@@ -134,7 +136,9 @@ const Cart = () => {
 
 
 
-            { <button className='checkout-button' onClick={() => addNewProduct("Kaffe Latte", 49)}>Take my money!</button> }
+            <button className='checkout-button' onClick={() => ApiCall("order", undefined, 49)}>Take my money!</button> 
+            {/* Onclick är bara där för exempel! */}
+            {/* onClick={() => addNewProduct("Kaffe Latte", 49)} */}
 
 
         </section>
@@ -146,7 +150,7 @@ const Cart = () => {
 
 
        </section>
-       </section>
+      
 
        
        

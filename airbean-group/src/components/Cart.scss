@@ -17,24 +17,26 @@ $secondary-color: rgba(47, 41, 38, 1);
     opacity: 0;
  }
 
+ ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }
 
-
-.background-filler {
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(49, 49, 49);
-    @include absoluteCentering();
-}
 
 .temp-background {
-    background-color: #F3E4E1;
-    width: 30vw;
-    height: 90vh;
+    border: 2px solid black;
+    width: 390px;
+    height: 844px;
     display: flex;
-
     position: relative;
 }
 
@@ -44,8 +46,8 @@ $secondary-color: rgba(47, 41, 38, 1);
 
 
 .cart-button {
-    width: 70px;
-    height: 70px;
+    width: 52.8px;
+    height: 52.8px;
     background-color: $secondary-color;
     border: none;
     position: absolute;
@@ -58,8 +60,8 @@ $secondary-color: rgba(47, 41, 38, 1);
 }
 
 .cart-button-notification-icon {
-    height: 27px;
-    width: 27px;
+    height: 23px;
+    width: 23px;
     background-color: #E5674E;
     position: absolute;
     right: -2px;
@@ -72,6 +74,8 @@ $secondary-color: rgba(47, 41, 38, 1);
    color: white;
    font-family: Arial, Helvetica, sans-serif;
    font-size: 15px;
+   text-align: center;
+   margin: 0;
 }
 
 
@@ -103,7 +107,7 @@ $secondary-color: rgba(47, 41, 38, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 25px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -112,7 +116,7 @@ $secondary-color: rgba(47, 41, 38, 1);
 .cart-icon-pointer {
     position: absolute;
     right: 0;
-    margin-right: 20px;
+    margin-right: 18px;
     top: -20px;
     width: 0;
     height: 0;
@@ -163,6 +167,7 @@ $secondary-color: rgba(47, 41, 38, 1);
     @include textDefaults();
     margin: 0;
     margin-top: 10px;
+    font-size: 17px;
 }
 
 .product-remove-button {
@@ -214,6 +219,7 @@ $secondary-color: rgba(47, 41, 38, 1);
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .cart-total-text {
@@ -253,11 +259,13 @@ $secondary-color: rgba(47, 41, 38, 1);
     background-color: $secondary-color;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     width: 65%;
     height: 10%;
     border-radius: 50px;
-    margin-top: 40px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 30px;
     transition: 0.3s;
     font-weight: bold;
 }

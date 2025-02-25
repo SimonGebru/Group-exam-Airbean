@@ -17,7 +17,7 @@ function About(){
         <div className={`about-container ${isVisible ? "fade-in" : ""}`}>
             {/*Header*/}
             <header className="about-header">
-                <img src={headerImg} alt="Bilder på blad" />
+                <img src={headerImg} alt="Bilder på blad" className="header-img"/>
                 <img src={menuImg} alt="Hamburgarmeny" className="menu-icon" onClick={() => navigate("/nav")}/>
                  
             </header>
@@ -25,13 +25,18 @@ function About(){
             <section className="about-content">
                 <h1>Vårt Kaffe</h1>
                 <p className="bold">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus error corrupti illum. Enim assumenda, nostrum beatae fugit eaque ullam, tempore quae illo qui, consequuntur earum doloribus cupiditate. Ab, quaerat atque?
+                En kopp av ren magi! <br />På Airbean tar vi kaffe på största allvar – men utan att tappa vår lekfullhet! Våra kaffebönor är noggrant utvalda från världens bästa kaffeodlingar, där varje böna fått växa i sin egen takt, smeks av solens strålar och vattnas av molnens mildaste droppar.
                 </p>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima incidunt ratione iure rem aperiam omnis eaque quasi, natus saepe maiores quis dolorem repellendus nam commodi autem, error aliquam illo at! Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quo veniam eligendi! Nisi expedita nostrum reprehenderit earum repellendus, aspernatur blanditiis temporibus tempora magnam fugit at nulla ipsa enim obcaecati vel!
+                Vårt kaffe är inte bara en dryck, det är en upplevelse. Vi tror på att varje kopp ska vara en smakresa – från första doften av nybryggt kaffe till den där perfekta första klunken som får dig att le. Vill du ha en fyllig och mörk espresso? En len och krämig cappuccino? Eller kanske en klassisk bryggkaffe som värmer själen? Vi har allt!
                 </p>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero aut illo quo dicta impedit, incidunt nam eos alias quam omnis itaque, distinctio optio harum ratione nulla nemo sequi voluptatibus ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod animi nemo quisquam a voluptatem perspiciatis dolorem dolore consequuntur totam aspernatur magnam voluptas culpa, corrupti impedit et amet! Tempora, aperiam labore?
+                <strong>Kaffe och drönarleverans – framtiden är här!</strong> <br />Glöm köer och stressiga morgnar – hos oss beställer du ditt kaffe och får det levererat av våra blixtsnabba drönare. Vi lovar att de varken spiller eller smakar på ditt kaffe (vi har testat… de föredrar batterier). <br /> <br />
+
+<strong>Hantverk, kvalitet och hållbarhet</strong> <br />
+Vi strävar efter att vara så hållbara som möjligt – från böna till kopp. Våra kaffeodlare får rättvist betalt och vi använder biologiskt nedbrytbara förpackningar. För vi tycker att gott kaffe ska smaka ännu bättre när man vet att det gör gott för världen.
+
+Så nästa gång du behöver en riktig energikick, en smakexplosion eller bara en riktigt schysst kaffestund – låt Airbean ta hand om det. Vi lovar, det är kärlek vid första klunken!
                 </p>
             </section>
             {/*Profil*/}
