@@ -3,13 +3,11 @@ import HeaderLogo from "../assets/header2.png";
 import FooterLogo from "../assets/header3.png";
 import "./Menu.scss";
 import HamMenu from "../assets/menu.png";
-import CartIcon from "../assets/bag 2.png";
 import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const navigate = useNavigate();
   const [menuItems, setMenuItems] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -33,11 +31,6 @@ const Menu = () => {
     fetchMenu();
   }, []);
 
-  const addToCart = () => {
-    setCartCount(cartCount + 1);
-  };
-
-
   if (loading) return <p>Laddar meny...</p>;
   if (error) return <p>Fel: {error}</p>;
 
@@ -46,17 +39,12 @@ const Menu = () => {
       <div className="menu-header">
         <img src={HeaderLogo} alt="header" className="header" />
         <img src={HamMenu} alt="ham-menu" className="ham-menu" onClick={() => navigate("/nav")}/>
-        <div className="cart-icon-container">
-          <img src={CartIcon} alt="cart-icon" className="cart-icon" />
-          {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-        </div>
       </div>
       <h1 className="menu-title">Meny</h1>
       <ul className="menu-list">
         {menuItems.map((item) => (
           <li key={item.id} className="menu-item">
-            <button className="add-button" onClick={addToCart}>
-            <div className='cross crossOne'>+</div>
+            <button className="add-button">+
             </button>
             <div className="menu-item-details">
               <span className="menu-item-name">{item.title}</span>

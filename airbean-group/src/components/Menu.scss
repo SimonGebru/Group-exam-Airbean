@@ -1,9 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 $primary-color: #f3e4e1;
 $main-font: 'PT Serif', serif;
-$secondary-font: 'PT Sans', sans-serif;
 $main-font-color: black;
 $description-font-color: gray;
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
 
 .menu-container {
   position: relative;
@@ -11,13 +24,12 @@ $description-font-color: gray;
   border-radius: 10px;
   max-width: 390px;
   max-height: 844px;
-  margin: auto;
   overflow: scroll;
+  overflow-x: hidden;
 
   .header {
     position: absolute;
-    bottom: -50px;
-    left: 0;
+    bottom: -45px;
     width: 100%;
     z-index: 0;
   }
@@ -26,7 +38,7 @@ $description-font-color: gray;
     position: relative;
     width: 100%;
     bottom: -5px;
-    margin-top: 80px;
+    margin-top: 60px;
     z-index: 1;
   }
 
@@ -37,59 +49,31 @@ $description-font-color: gray;
     position: relative;
     z-index: 2;
   }
-
-  .ham-menu, .cart-icon {
-    cursor: pointer;
-    z-index: 1;
-  }
   
   .ham-menu {
+    cursor: pointer;
+    z-index: 1;
     margin-left: 20px;
     margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
   }
-  
-  .cart-icon {
-    position: relative;
+
+  .ham-menu:hover {
+    transform: scale(1.1);
   }
-  
-  .cart-icon-container {
-    display: flex;
-    border-radius: 50%;
-    padding: 16px;
-    align-items: center;
-    justify-content: center;
-    background: black;
-    position: relative;
-    top: 12px;
-    right: 20px;
-  }
-  
-  .cart-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 8px;
-    font-size: 11px;
-    font-weight: bold;
-  }
-  
   
   .menu-title {
     font-family: $main-font;
     text-align: center;
     font-size: 42px;
-    margin-top: 100px;
+    margin-top: 70px;
+    margin-bottom: 40px;
     position: relative;
     z-index: 2;
   }
   
   .menu-list {
     list-style: none;
-    padding: 0;
-    position: relative;
     z-index: 2;
   }
   
@@ -101,7 +85,6 @@ $description-font-color: gray;
     font-family: $main-font;
     background: $primary-color;
     padding: 15px;
-    margin-bottom: 5px;
   }
   
   
@@ -110,13 +93,19 @@ $description-font-color: gray;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 32px;
+    margin-top: -30px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .add-button:hover {
+    transform: scale(1.1);
   }
   
   
@@ -124,25 +113,25 @@ $description-font-color: gray;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-left: 15px;
     line-height: 0.2;
-    padding-top: 10px;
   }
   
   .menu-item-name {
     font-weight: bold;
-    font-size: 23px;
+    margin-left: 10px;
+    font-size: 20px;
   }
   
   .menu-item-price {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
     text-align: right;
-    min-width: 50px;
   }
   
   .menu-item-description {
     font-size: 12px;
+    margin-top: 3px;
+    margin-left: -10px;
     font-family: $main-font;
     color: $description-font-color;
   }
