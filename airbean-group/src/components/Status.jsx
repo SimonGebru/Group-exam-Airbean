@@ -4,24 +4,20 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Status = () => {
-  const [orderNumber, setOrderNumber] = useState('');
-  const [timeLeft, setTimeLeft] = useState('');
-    
- 
-
+  
+  /* Button till nav */
   const navigate = useNavigate();
-
   const handleButtonClick = () => {
-    navigate('/menu');
+    navigate('/nav');
   }
 
   return (
     <div className='status-container'>
-        <p className="order-number">Ordernummer <strong>#12DV23F</strong></p>
-        <img src={drone} alt="" className='img' />
-        <h1>Din beställning är på väg!</h1>
-        <p> <strong>13</strong> minuter</p>
-        <button className='button' onClick={handleButtonClick}>Ok, cool!</button>
+      <p className="order-number">Ordernummer <strong>#{orderNumber}</strong></p>
+      <img src={drone} alt="" className='img' />
+      <h1 className='order-text'>Din beställning är på väg!</h1>
+      <p className='minutes-left'> <strong>{timeLeft}</strong> minuter</p>
+      <button className='button' onClick={handleButtonClick}>Ok, cool!</button>
     </div>
   )
 }
