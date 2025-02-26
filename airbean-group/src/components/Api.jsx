@@ -1,11 +1,14 @@
+import React, { useState } from "react";
 
 
 
 
 
 
+const ApiCall = async (typeOfCall, orderNumber, orderCart) => {
 
-const ApiCall = async (typeOfCall, orderNumber, orderPrice) => {
+
+
 
   
 
@@ -36,7 +39,7 @@ const ApiCall = async (typeOfCall, orderNumber, orderPrice) => {
             const data = await response.json();
 
 
-            console.log(data)
+            console.log("Här är return datan: " + data)
 
       
           } catch (error) {
@@ -49,6 +52,8 @@ const ApiCall = async (typeOfCall, orderNumber, orderPrice) => {
 
         try {
 
+          console.log(orderCart)
+
           const response = await fetch(`https://airbean-9pcyw.ondigitalocean.app/api/beans/order`, {
             method: 'POST',
             headers: {
@@ -56,15 +61,17 @@ const ApiCall = async (typeOfCall, orderNumber, orderPrice) => {
             },
             body: JSON.stringify({ 
               details: { 
-              order: [
-              {"name": "Cappuccino", "price": orderPrice},
-              {"name": "Cappuccino", "price": orderPrice}
-            ] 
+              order: orderCart
             } 
           })
           });
 
+
+
           const data = await response.json();
+
+
+
 
           console.log(data)
           if (!response.ok) {

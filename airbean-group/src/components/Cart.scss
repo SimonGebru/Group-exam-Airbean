@@ -33,11 +33,11 @@ $secondary-color: rgba(47, 41, 38, 1);
 
 
 .temp-background {
-    border: 2px solid black;
-    width: 390px;
-    height: 844px;
+    width: 100%;
+    height: 100%;
     display: flex;
-    position: relative;
+    position: absolute;
+    top: 0;
 }
 
 
@@ -57,6 +57,7 @@ $secondary-color: rgba(47, 41, 38, 1);
     margin-right: 15px;
     margin-top: 15px;
     transition: 0.3s;
+    z-index: 5;
 }
 
 .cart-button-notification-icon {
@@ -111,6 +112,7 @@ $secondary-color: rgba(47, 41, 38, 1);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 5;
 }
 
 .cart-icon-pointer {
@@ -133,13 +135,12 @@ $secondary-color: rgba(47, 41, 38, 1);
 
 .cart-product-container {
     width: 95%;
-    height: 50%;
+    height: 45%;
     overflow: scroll;
     display: flex;
     flex-direction: column;
     gap: 8%;
     align-items: center;
-
 }
 
 .product-example {
