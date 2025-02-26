@@ -5,7 +5,13 @@ import { useState, useEffect } from "react";
 
 const Status = () => {
   const location = useLocation();
-  const { orderNumber, timeLeft } = location.state || {}; 
+  let { orderNumber, timeLeft } = location.state || {}; 
+
+  if (!orderNumber || !timeLeft) {
+    const savedOrder = JSON.parse(localStorage.getItem('orderDetails'));
+    orderNumber = savedOrder.orderNr;
+    timeLeft = savedOrder.eta;
+  }
   
   /* Button till nav */
   const navigate = useNavigate();
