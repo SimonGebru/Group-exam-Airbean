@@ -3,9 +3,8 @@ import drone from '/src/assets/drone.png'
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Status = () => {
-  const [orderNumber, setOrderNumber] = useState('');
-  const [timeLeft, setTimeLeft] = useState();
+const Status = ({ orderNumber, timeLeft}) => {
+  
   
   /* Button till nav */
   const navigate = useNavigate();
