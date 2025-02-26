@@ -1,0 +1,34 @@
+.landing {
+    width: 390px;
+    height: 844px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #38846D;
+  
+    .leaves {
+      height: 840px;
+      position: absolute;
+      top: 0;
+  
+      &.left {
+        left: 0;
+      }
+  
+      &.right {
+        right: 0;
+      }
+    }
+  
+    .logo {
+      width: 70%;
+      max-width: 200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
