@@ -78,6 +78,7 @@ const ApiCall = async (typeOfCall, orderNumber, orderCart) => {
             throw new Error('Något gick fel vid beställning..');
           }
 
+          return data;
       
         } catch (error) {
           console.error('Fel vid beställningsanropet:', error);

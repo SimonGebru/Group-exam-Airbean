@@ -1,10 +1,11 @@
 import React from 'react'
 import drone from '/src/assets/drone.png'
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Status = ({ orderNumber, timeLeft}) => {
-  
+const Status = () => {
+  const location = useLocation();
+  const { orderNumber, timeLeft } = location.state || {}; 
   
   /* Button till nav */
   const navigate = useNavigate();
