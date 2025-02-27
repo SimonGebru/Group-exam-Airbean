@@ -16,6 +16,7 @@ $header-font: "PT Serif", serif;
   margin: 0 auto;
   height: 844px;
   overflow: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -47,7 +48,6 @@ $header-font: "PT Serif", serif;
     position: absolute;
     top: 40px;
     left: 15px;
-    width: 40px;
     cursor: pointer;
     z-index: 10;
   }

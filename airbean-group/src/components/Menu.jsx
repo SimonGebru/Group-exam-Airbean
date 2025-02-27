@@ -12,6 +12,12 @@ const Menu = () => {
   const [cart, setCart] = useState([]); // kundvagns-state
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [iconStates, setIconStates] = useState({});
+
+  const handleClick = () => {
+    addToCart(item);
+    setIcon(icon === "+" ? "✔" : "+"); // Växlar mellan + och ✔
+  };
 
   useEffect(() => {
     const fetchMenu = async () => {
@@ -22,6 +28,12 @@ const Menu = () => {
         }
         const data = await response.json();
         setMenuItems(data.menu);
+        
+        const initialIcons = {};
+        data.menu.forEach((item) => {
+          initialIcons[item.id] = "+";
+        });
+        setIconStates(initialIcons);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -38,7 +50,18 @@ const Menu = () => {
     console.log("Lägger till i kundvagnen:", newItem);
     setCart((prevCart) => [...prevCart, newItem]);
 
-  };
+  setIconStates((prevIcons) => ({
+    ...prevIcons,
+    [item.id]: "✔",
+  }));
+
+  setTimeout(() => {
+    setIconStates((prevIcons) => ({
+      ...prevIcons,
+      [item.id]: "+",
+    }));
+  }, 1000);
+};
 
   const removeFromCart = (id) => {
     console.log("Tar bort från kundvagnen:", id);
@@ -58,12 +81,14 @@ const Menu = () => {
         <img src={HeaderLogo} alt="header" className="header" />
         <img src={HamMenu} alt="ham-menu" className="ham-menu" onClick={() => navigate("/nav")} />
       </section>
-      <Cart cartItems={cart} removeFromCart={removeFromCart}/>
+      <Cart cartItems={cart} removeFromCart={removeFromCart} />
       <h1 className="menu-title">Meny</h1>
       <ul className="menu-list">
         {menuItems.map((item) => (
           <li key={item.id} className="menu-item">
-            <button className="add-button" onClick={() => addToCart(item)}>+</button>
+            <button className={`add-button ${iconStates[item.id] === "✔" ? "clicked" : ""}`} onClick={() => addToCart(item)}>
+              <span className="icon">{iconStates[item.id] || "+"}</span>
+            </button>
             <section className="menu-item-details">
               <span className="menu-item-name">{item.title}</span>
               <span className="menu-item-price">{item.price} kr</span>
@@ -72,7 +97,6 @@ const Menu = () => {
           </li>
         ))}
       </ul>
-
       <img src={FooterLogo} alt="footer" className="footer" />
     </section>
   );

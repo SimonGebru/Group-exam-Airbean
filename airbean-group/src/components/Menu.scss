@@ -21,7 +21,6 @@ $description-font-color: gray;
 .menu-container {
   position: relative;
   background-color: $primary-color;
-  border-radius: 10px;
   max-width: 390px;
   max-height: 844px;
   overflow: scroll;
@@ -51,6 +50,7 @@ $description-font-color: gray;
   }
   
   .ham-menu {
+    
     cursor: pointer;
     z-index: 1;
     margin-left: 20px;
@@ -89,24 +89,47 @@ $description-font-color: gray;
   
   
   .add-button {
+    position: relative;
     background: black;
     color: white;
     border: none;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 32px;
     height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     font-size: 32px;
     margin-top: -30px;
-    transition: transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease, transform 0.4s ease-in-out;
     z-index: 4;
   }
 
-  .add-button:hover {
-    transform: scale(1.1);
+.add-button:hover {
+  background-color: gray;
+}
+
+  .add-button:active {
+    transform: scale(0.9);
+  }
+
+  .icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, opacity 0.9s ease-in-out;
+  }
+  
+  .add-button.clicked .icon {
+    background-color: green;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    opacity: 0;
+  }
+  
+  .add-button .icon {
+    opacity: 1;
   }
   
   

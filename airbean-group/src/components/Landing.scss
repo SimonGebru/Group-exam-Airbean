@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+$header-font: "PT Serif", serif;
+
 .landing {
     width: 390px;
     height: 844px;
@@ -30,5 +34,19 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    .discount {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: white;
+      font-family: $header-font;
+      position: absolute;
+      background-color: #295f4f;
+      padding: 20px;
+      border-radius: 20px;
     }
   }

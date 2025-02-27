@@ -17,7 +17,29 @@ const Cart = ({ cartItems, removeFromCart }) => {
      price: product.price
    }));
 
-  const totalPrice = cartItems.reduce((sum, product) => sum + product.price, 0) + " kr";
+  const checkForDiscount = () => {
+    const productTitlesForDiscount = ["Bryggkaffe", "Gustav Adolfsbakelse"];
+    const hasDiscount = productTitlesForDiscount.every(title => cartItems.some(item => item.title === title));
+    return hasDiscount;
+  }
+
+  const calculateTotalPrice = () => {
+    const baseTotal = cartItems.reduce((sum, product) => sum + product.price, 0);
+    if (checkForDiscount()) {
+      return baseTotal - 49 + " kr";
+    }
+    return baseTotal + " kr";
+  };
+
+  const calculateDiscount = () => {
+    if (checkForDiscount()) {
+      return 49 + " kr";
+    }
+    return null;
+  };
+
+  const totalPrice = calculateTotalPrice();
+  const totalDiscount = calculateDiscount();
   
   const navigate = useNavigate();
 
@@ -62,6 +84,9 @@ const Cart = ({ cartItems, removeFromCart }) => {
           <p className="cart-total-text">Total </p>
           <p className="cart-dots-divider"> ... </p>
           <p className="cart-price">{totalPrice}</p>
+          {totalDiscount && (
+              <p className="cart-discount">Rabatt: {totalDiscount}</p>
+          )}
           <p className="cart-information">inkl moms + drönarleverans</p>
         </section>
 
