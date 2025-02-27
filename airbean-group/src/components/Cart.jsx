@@ -2,7 +2,7 @@ import './Cart.scss'
 import bagIcon from '../assets/bag 2.png'
 import React, { useState } from "react";
 import { useEffect } from "react";
-import ApiCall from './api.jsx';
+import ApiCall from './Api.jsx';
 import { useNavigate } from "react-router-dom";
 
 const Cart = ({ cartItems, removeFromCart }) => {

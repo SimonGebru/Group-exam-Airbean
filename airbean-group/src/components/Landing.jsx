@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; 
-import "./Landing.scss";
+import "./styling/Landing.scss";
 import leftImage from "../assets/Left.png";
 import rightImage from "../assets/Right.png";
 import middleImage from "../assets/Middle.png";

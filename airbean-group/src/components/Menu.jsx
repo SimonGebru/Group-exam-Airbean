@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import HeaderLogo from "../assets/header2.png";
 import FooterLogo from "../assets/header3.png";
-import "./Menu.scss";
+import "./styling/Menu.scss";
 import HamMenu from "../assets/menu.png";
 import { useNavigate } from "react-router-dom";
 import Cart from "./Cart.jsx";
 import StickyAd from "./StickyAd.jsx";
-import ApiCall from './api.jsx';
+import ApiCall from './Api.jsx';
 
 const Menu = () => {
   const navigate = useNavigate();
   const [menuItems, setMenuItems] = useState([]);
   const [cart, setCart] = useState([]); // kundvagns-state
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [iconStates, setIconStates] = useState({});
 
@@ -61,7 +60,7 @@ const Menu = () => {
       return updatedCart;
     });
   };
-  // if (loading) return <p>Laddar meny...</p>;
+
   if (error) return <p>Fel: {error}</p>;
 
   console.log("Meny:", menuItems);
