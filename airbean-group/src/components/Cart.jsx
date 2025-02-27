@@ -1,4 +1,4 @@
-import './Cart.scss'
+import './styling/Cart.scss'
 import bagIcon from '../assets/bag 2.png'
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -7,7 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 const Cart = ({ cartItems, removeFromCart }) => {
   const [isHidden, setIsHidden] = useState(true);
+  console.log("Cart items:", cartItems);
   useEffect(() => {
+    console.log("Nya produkter i kundvagnen:", cartItems);
   }, [cartItems]);
 
       const cartProductList = cartItems.map(product => ({
@@ -44,8 +46,9 @@ const Cart = ({ cartItems, removeFromCart }) => {
   const handleCheckout = async () => {
     try {
       const orderDetails = await ApiCall("order", undefined, cartProductList);
+      console.log("Order Details:", orderDetails);
       localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
-      navigate("/status", { state: { orderNr: orderDetails.orderNr, eta: orderDetails.eta } });
+      navigate("/status", { state: { orderNumber: orderDetails.orderNr, timeLeft: orderDetails.eta } });
     } catch (error) {
       console.error("Fel vid skapande av order:", error);
     }
