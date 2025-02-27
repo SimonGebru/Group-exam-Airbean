@@ -11,6 +11,7 @@ const Status = () => {
   /* Hämta orderdata */
   let orderData = location.state || JSON.parse(localStorage.getItem('orderDetails')) || null;
 
+  /* Om ingen order är lagd */
   if (!orderData) {
     return (
       <div className="status-container">
@@ -19,7 +20,7 @@ const Status = () => {
           Meny
         </button>
       </div>
-    );
+    )
   }
 
   let { orderNr, eta } = orderData;
@@ -39,13 +40,6 @@ const Status = () => {
     const savedOrder = JSON.parse(localStorage.getItem('orderDetails'));
     orderNr = savedOrder.orderNr;
     eta = savedOrder.eta;
-  }
-
-  /* Reset localStorage */
-  const handleResetOrder = () => {
-    localStorage.removeItem('orderDetails');
-
-    navigate('/menu');
   }
 
   return (
