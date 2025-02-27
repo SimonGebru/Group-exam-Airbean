@@ -36,7 +36,6 @@ const Menu = () => {
   const addToCart = (item) => {
     let itemId = Math.max(...cart.map(item => item.id), 0) + 1;
     const newItem = { id: itemId, title: item.title, price: item.price}
-    console.log("Lägger till i kundvagnen:", newItem);
     setCart((prevCart) => [...prevCart, newItem]);
 
   setIconStates((prevIcons) => ({
@@ -53,17 +52,14 @@ const Menu = () => {
 };
 
   const removeFromCart = (id) => {
-    console.log("Tar bort från kundvagnen:", id);
     setCart((prevCart) => {
       const updatedCart = prevCart.filter((item) => item.id !== id);
-      console.log("Ny kundvagn efter borttagning:", updatedCart);
       return updatedCart;
     });
   };
 
   if (error) return <p>Fel: {error}</p>;
 
-  console.log("Meny:", menuItems);
   return (
     <section className="menu-container">
       <section className="menu-header">

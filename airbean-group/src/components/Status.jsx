@@ -7,39 +7,15 @@ import { useState, useEffect } from "react";
 
 const Status = () => {
   const location = useLocation();
-  let { orderNumber, timeLeft:initialTimeLeft } = location.state || {}; 
-  let [timeLeft, setTimeLeft] = useState(initialTimeLeft);
-
-  /* Button till nav */
   const navigate = useNavigate();
-  const handleButtonClick = () => {
-    navigate('/nav');
-  }
 
-    /* setInterval för timer */
-  useEffect(() => {
-    if (timeLeft <= 0) return;
+  /* Hämta orderdata */
+  let orderData = location.state || JSON.parse(localStorage.getItem('orderDetails')) || null;
 
-    const timer = setInterval(() => {
-      setTimeLeft(prevTime => {
-        if (prevTime <= 1) {
-          clearInterval(timer);
-          return 0;
-        }
-        return prevTime - 1;
-      });
-    }, 5000);
-    console.log(timer)
-
-    // Rensa intervallet vid unmount
-    return () => clearInterval(timer);
-  }, [timeLeft]);
-
-  const initialOrder = location.state || null;
-  if (!initialOrder) {
+  if (!orderData) {
     return (
       <div className="status-container">
-        <p>Vänligen lägg en beställning först.</p>
+        <p>Vänligen lägg en beställning först!</p>
         <button className="button" onClick={() => navigate('/menu')}>
           Meny
         </button>
@@ -47,19 +23,40 @@ const Status = () => {
     );
   }
 
-  if (!orderNumber || !timeLeft) {
+  let { orderNr, eta } = orderData;
+
+  /* nuvarande tid + ETA */
+  let arrivalTime = orderData.arrivalTime;
+  if (!arrivalTime) {
+    arrivalTime = Date.now() + eta * 60000;
+    orderData.arrivalTime = arrivalTime;
+    localStorage.setItem('orderDetails', JSON.stringify(orderData));
+  }
+
+  const arrivalDate = new Date(arrivalTime);
+  const formattedTime = arrivalDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  if (!orderNr || !eta) {
     const savedOrder = JSON.parse(localStorage.getItem('orderDetails'));
-    orderNumber = savedOrder.orderNr;
-    timeLeft = savedOrder.eta;
+    orderNr = savedOrder.orderNr;
+    eta = savedOrder.eta;
+  }
+
+  /* Reset localStorage */
+  const handleResetOrder = () => {
+    localStorage.removeItem('orderDetails');
+
+    navigate('/menu');
   }
 
   return (
     <div className='status-container'>
-      <p className="order-number">Ordernummer <strong>#{orderNumber}</strong></p>
+      <p className="order-number">Ordernummer <strong>#{orderNr}</strong></p>
       <img src={drone} alt="" className='img' />
       <h1 className='order-text'>Din beställning är på väg!</h1>
-      <p className='minutes-left'> <strong>{timeLeft}</strong> minuter</p>
-      <button className='button' onClick={handleButtonClick}>Ok, cool!</button>
+      <p className='minutes-left'> Levereras: <strong>{formattedTime}</strong> </p>
+      <button className='button' onClick={() => navigate('/nav')}>Ok, cool!</button>
+      
     </div>
   )
 }
