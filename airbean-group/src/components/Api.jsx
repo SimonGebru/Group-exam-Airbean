@@ -38,7 +38,6 @@ const ApiCall = async (typeOfCall, orderNumber, orderCart) => {
             const data = await response.json();
 
 
-            console.log("Här är return datan: " + data)
 
       
           } catch (error) {
@@ -51,7 +50,6 @@ const ApiCall = async (typeOfCall, orderNumber, orderCart) => {
 
         try {
 
-          console.log(orderCart)
 
           const response = await fetch(`https://airbean-9pcyw.ondigitalocean.app/api/beans/order`, {
             method: 'POST',
@@ -72,7 +70,6 @@ const ApiCall = async (typeOfCall, orderNumber, orderCart) => {
 
 
 
-          console.log(data)
           if (!response.ok) {
             throw new Error('Något gick fel vid beställning..');
           }
