@@ -5,7 +5,7 @@ import "./Menu.scss";
 import HamMenu from "../assets/menu.png";
 import { useNavigate } from "react-router-dom";
 import Cart from "./Cart.jsx";
-import StickyAd from "./Stickyad.jsx";
+import StickyAd from "./StickyAd.jsx";
 
 const Menu = () => {
   const navigate = useNavigate();
