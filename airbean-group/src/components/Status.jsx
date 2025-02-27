@@ -1,5 +1,6 @@
 import React from 'react'
 import drone from '/src/assets/drone.png'
+import "./styling/Status.scss"
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 

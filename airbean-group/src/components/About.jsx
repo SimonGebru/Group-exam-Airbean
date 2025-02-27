@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./About.scss"; 
+import "./styling/About.scss"; 
 import headerImg from "../assets/header2.png"
 import footerImg from "../assets/header3.png"
 import menuImg from "../assets/menu.png"

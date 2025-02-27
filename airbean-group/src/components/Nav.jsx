@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Nav.scss";
+import "./styling/Nav.scss";
 import closeIcon from "../assets/close.png";
 
 function Nav() {
