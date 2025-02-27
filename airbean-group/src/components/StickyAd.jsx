@@ -1,5 +1,5 @@
 import React from "react";
-import "./StickyAd.scss"; // Skapa en separat SCSS-fil för styling
+import "./StickyAd.scss"; 
 
 const StickyAd = () => {
   return (

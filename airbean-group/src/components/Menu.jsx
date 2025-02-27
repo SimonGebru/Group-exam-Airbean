@@ -5,6 +5,7 @@ import "./Menu.scss";
 import HamMenu from "../assets/menu.png";
 import { useNavigate } from "react-router-dom";
 import Cart from "./Cart.jsx";
+import StickyAd from "./Stickyad.jsx";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -82,6 +83,7 @@ const Menu = () => {
         <img src={HamMenu} alt="ham-menu" className="ham-menu" onClick={() => navigate("/nav")} />
       </section>
       <Cart cartItems={cart} removeFromCart={removeFromCart} />
+      <StickyAd />
       <h1 className="menu-title">Meny</h1>
       <ul className="menu-list">
         {menuItems.map((item) => (
