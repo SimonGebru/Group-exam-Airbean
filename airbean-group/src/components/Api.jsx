@@ -15,13 +15,12 @@ const ApiCall = async (typeOfCall, orderNumber, orderCart) => {
 
        if (typeOfCall === "menu") {
         try {
-            const response = await fetch(`https://airbean-9pcyw.ondigitalocean.app/api/beans/`);
+            const response = await fetch(`https://airbean-9pcyw.ondigitalocean.app/api/beans`);
             if (!response.ok) {
               throw new Error("Något gick fel vid hämtning av menyn..");
             }
             const data = await response.json();
             
-            console.log(data.menu)
             return data.menu 
           } catch (err) {
             console.error()

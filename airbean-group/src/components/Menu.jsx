@@ -6,6 +6,7 @@ import HamMenu from "../assets/menu.png";
 import { useNavigate } from "react-router-dom";
 import Cart from "./Cart.jsx";
 import StickyAd from "./StickyAd.jsx";
+import ApiCall from './api.jsx';
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -22,28 +23,16 @@ const Menu = () => {
 
   useEffect(() => {
     const fetchMenu = async () => {
-      try {
-        const response = await fetch("https://airbean-9pcyw.ondigitalocean.app/api/beans");
-        if (!response.ok) {
-          throw new Error("Något gick fel vid hämtning av menyn");
-        }
-        const data = await response.json();
-        setMenuItems(data.menu);
-        
-        const initialIcons = {};
-        data.menu.forEach((item) => {
-          initialIcons[item.id] = "+";
-        });
-        setIconStates(initialIcons);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
+
+       const menuList = await ApiCall("menu", undefined, undefined)
+       setMenuItems(menuList)
+
     };
 
     fetchMenu();
   }, []);
+
+  
 
   const addToCart = (item) => {
     let itemId = Math.max(...cart.map(item => item.id), 0) + 1;
@@ -72,7 +61,7 @@ const Menu = () => {
       return updatedCart;
     });
   };
-  if (loading) return <p>Laddar meny...</p>;
+  // if (loading) return <p>Laddar meny...</p>;
   if (error) return <p>Fel: {error}</p>;
 
   console.log("Meny:", menuItems);
