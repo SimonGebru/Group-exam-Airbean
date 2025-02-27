@@ -48,7 +48,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
       const orderDetails = await ApiCall("order", undefined, cartProductList);
       console.log("Order Details:", orderDetails);
       localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
-      navigate("/status", { state: { orderNumber: orderDetails.orderNr, timeLeft: orderDetails.eta } });
+      navigate("/status", { state: { orderNr: orderDetails.orderNr, eta: orderDetails.eta } });
     } catch (error) {
       console.error("Fel vid skapande av order:", error);
     }
