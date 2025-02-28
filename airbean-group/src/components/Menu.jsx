@@ -15,10 +15,7 @@ const Menu = () => {
   const [error, setError] = useState(null);
   const [iconStates, setIconStates] = useState({});
 
-  const handleClick = () => {
-    addToCart(item);
-    setIcon(icon === "+" ? "✔" : "+"); // Växlar mellan + och ✔
-  };
+
 
   useEffect(() => {
     const fetchMenu = async () => {
