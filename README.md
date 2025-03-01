@@ -1,3 +1,6 @@
+Figma+Retro: https://trello.com/invite/b/67c096391948eb3cd00e6c78/ATTI9ebde831f2b9782cdc59dd26c31ab21bB416B208/airbean
+
+
 # Group-exam-Airbean
 Orangea björnen
 
